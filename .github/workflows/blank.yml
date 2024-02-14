@@ -1,0 +1,16 @@
+name: skip
+
+on:
+  workflow_dispatch:
+
+jobs:
+  example:
+    runs-on: ubuntu-latest
+    steps:
+      - name: hello
+        run: echo "hello"
+      - name: never
+        if: false
+        run: echo "never"
+      - name: goodbye
+        run: echo "goodbye"
